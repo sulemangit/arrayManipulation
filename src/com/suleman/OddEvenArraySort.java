@@ -5,13 +5,17 @@ import java.util.Collections;
 
 public class OddEvenArraySort {
 
-    public ArrayList sort(int[] arr){
+    public Integer[] sort(Integer[] arr){
 
         ArrayList<Integer> even = new ArrayList<>();
         ArrayList<Integer> odd = new ArrayList<>();
         ArrayList<Integer> sortedList = new ArrayList<>();
 
-        for (int value: arr) {
+        if(arr.length == 0)
+            return arr;
+
+
+        for (Integer value: arr) {
             if(value % 2 == 0)
                 even.add(value);
             else
@@ -24,6 +28,7 @@ public class OddEvenArraySort {
         sortedList.addAll(odd);
         sortedList.addAll(even);
 
-        return sortedList;
+
+        return sortedList.toArray(arr);
     }
 }
